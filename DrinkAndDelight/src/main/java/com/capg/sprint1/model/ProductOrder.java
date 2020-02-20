@@ -5,6 +5,7 @@ import java.util.Date;
 public class ProductOrder {
 
 	 String orderId;
+	 String deliveryStatus;
 	String name;
 	double pricePerUnit;
 	double quantityValue;
@@ -14,18 +15,20 @@ public class ProductOrder {
 	Date deliveryDate;
 	Date manufacturinDate;
 	Date expiryDate;
-	String qualityCeck;
+	String qualityCheck;
 	Date processDate;
+	String distributorId;
 	
 	public ProductOrder() {
 		super();
 	}
 
-	public ProductOrder(String orderId,String name, double pricePerUnit, double quantityValue, double quantityUnit, double price,
-			String wareouseId, Date deliveryDate, Date manufacturinDate, Date expiryDate, String qualityCeck,
-			Date processDate) {
+	public ProductOrder(String orderId,String deliveryStatus,String name, double pricePerUnit, double quantityValue, double quantityUnit, double price,
+			String wareouseId, Date deliveryDate, Date manufacturinDate, Date expiryDate, String qualityCheck,
+			Date processDate, String distributorId) {
 		super();
 		this.orderId =orderId;
+		this.deliveryStatus=deliveryStatus;
 		this.name = name;
 		this.pricePerUnit = pricePerUnit;
 		this.quantityValue = quantityValue;
@@ -35,8 +38,17 @@ public class ProductOrder {
 		this.deliveryDate = deliveryDate;
 		this.manufacturinDate = manufacturinDate;
 		this.expiryDate = expiryDate;
-		this.qualityCeck = qualityCeck;
+		this.qualityCheck = qualityCheck;
 		this.processDate = processDate;
+		this.distributorId=distributorId;
+	}
+
+	public String getDeliveryStatus() {
+		return deliveryStatus;
+	}
+
+	public void setDeliveryStatus(String deliveryStatus) {
+		this.deliveryStatus = deliveryStatus;
 	}
 
 	public String getOrderId() {
@@ -120,11 +132,11 @@ public class ProductOrder {
 	}
 
 	public String getQualityCeck() {
-		return qualityCeck;
+		return qualityCheck;
 	}
 
 	public void setQualityCeck(String qualityCeck) {
-		this.qualityCeck = qualityCeck;
+		this.qualityCheck = qualityCeck;
 	}
 
 	public Date getProcessDate() {
@@ -135,15 +147,26 @@ public class ProductOrder {
 		this.processDate = processDate;
 	}
 
+	public String getDistributorId() {
+		return distributorId;
+	}
+
+	public void setDistributorId(String distributorId) {
+		this.distributorId = distributorId;
+	}
+
 	@Override
 	public String toString() {
-		return "ProductOrder [orderId=" + orderId + ", name=" + name + ", pricePerUnit=" + pricePerUnit
-				+ ", quantityValue=" + quantityValue + ", quantityUnit=" + quantityUnit + ", price=" + price
-				+ ", wareouseId=" + wareouseId + ", deliveryDate=" + deliveryDate + ", manufacturinDate="
-				+ manufacturinDate + ", expiryDate=" + expiryDate + ", qualityCeck=" + qualityCeck + ", processDate="
-				+ processDate + "]";
+		return "ProductOrder [orderId=" + orderId + ", deliveryStatus=" + deliveryStatus + ", name=" + name
+				+ ", pricePerUnit=" + pricePerUnit + ", quantityValue=" + quantityValue + ", quantityUnit="
+				+ quantityUnit + ", price=" + price + ", wareouseId=" + wareouseId + ", deliveryDate=" + deliveryDate
+				+ ", manufacturinDate=" + manufacturinDate + ", expiryDate=" + expiryDate + ", qualityCheck="
+				+ qualityCheck + ", processDate=" + processDate + ", distributorId=" + distributorId + "]";
+	}
+
+	
 	}
 
 	
 	
-}
+
