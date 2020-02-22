@@ -1,6 +1,9 @@
 package com.capg.sprint1.service;
 
+import com.capg.sprint1.model.DistributorDetails;
+import com.capg.sprint1.utils.DistributerNotFoundException;
+
 public interface DistributorDetailsService {
 	
-public String distributorDetails(String distributorId);
+public DistributorDetails distributorDetails(String distributorId) throws DistributerNotFoundException;
 }
