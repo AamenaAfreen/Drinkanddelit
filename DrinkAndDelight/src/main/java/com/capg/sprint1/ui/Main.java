@@ -23,6 +23,7 @@ static Scanner in=new Scanner(System.in);
 		case 1:
 		    System.out.println("Raw Material Order Details");
 	    	System.out.println("Enter Supplier Id");
+	    	
 		    String id=in.next();
 		    System.out.println("Enter Delivery Status"); 
 		    String deliveryStatus=in.next();
@@ -31,16 +32,19 @@ static Scanner in=new Scanner(System.in);
 		  for(RawMaterialOrder ord:orders) {
 			  System.out.println(ord);
 		  }
+		  
 		    }
 		  catch(RawMaterialNotFoundException e) {
 			  System.err.println(e.getMessage());
 		  }
+		    
 		 		    break;
 		
 		case 2:
 			System.out.println("Product Order Details");
 			System.out.println("Enter Delivery Id");
 			String deliveryId=in.next();
+			
 			System.out.println("Enter Delivery Status"); 
 			String deliveryStatus1=in.next();
 		try {
@@ -50,6 +54,7 @@ static Scanner in=new Scanner(System.in);
 			}
 		}
 		catch(ProductOrderNotFoundException e) {
+			
 			 System.err.println(e.getMessage());
 		}
 		

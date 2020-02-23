@@ -5,17 +5,23 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import com.capg.sprint1.model.DistributorDetails;
 import com.capg.sprint1.model.ProductOrder;
 import com.capg.sprint1.model.RawMaterialOrder;
 import com.capg.sprint1.model.SupplierDetails;
 
 public class DetailsDaoImpl implements DetailsDao {
-	Map<String,RawMaterialOrder> raws =new HashMap<>();
+	
+
+	public static Map<String,RawMaterialOrder> raws =new HashMap<>();
 	Map<String,ProductOrder> list=new HashMap<>();
 	Map<String,SupplierDetails> raws1 =new HashMap<>();
 
+	public void detailsDaoimpl()
+	{
+	account();
+    }
+	public void account() {
+	
 
 	
 	RawMaterialOrder order=new RawMaterialOrder("53553","sugar","602532",102.4,"123",new Date(), new Date(2020, 0, 15),121.0,146.0,"ontheWay","434");
@@ -31,7 +37,7 @@ public class DetailsDaoImpl implements DetailsDao {
 
 
 	
-	public DetailsDaoImpl() {
+	//public DetailsDaoImpl() {
 		raws.put(order.getOrderId(), order);
 		raws.put(order1.getOrderId(), order1);
 		raws.put(order11.getOrderId(), order11);
@@ -76,6 +82,7 @@ public class DetailsDaoImpl implements DetailsDao {
 				{
 					if(list.get(data).getDistributorId().equalsIgnoreCase(deliveryId) && list.get(data).getDeliveryStatus().equalsIgnoreCase(deliveryStatus1))
 					{
+						
 						orders1.add(list.get(data));
 					}
 					
